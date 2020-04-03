@@ -1,0 +1,18 @@
+.logo {
+    color: #fff;
+    font-weight: 600;
+    font-size: 1.4em;
+
+    &.logo-left {
+        // background-color: #ff6b6b;
+        background-color: aqua;
+        color: #161A1E;
+        padding: 3px 5px;
+        border-radius: 4px;
+    }
+
+    &.logo-right {
+        padding: 3px;
+        
+    }
+}

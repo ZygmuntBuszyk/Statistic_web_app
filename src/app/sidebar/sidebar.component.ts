@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ERoutes } from '../_enums/routes.enum'
 
 @Component({
   selector: 'app-sidebar',
@@ -7,9 +8,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SidebarComponent implements OnInit {
 
-  constructor() { }
+  public links: Array<{}>;
 
-  ngOnInit(): void {
+  constructor() { 
+    this.links = [];
+    this.getRoutes();
+    
   }
 
+  ngOnInit(): void {
+    console.log(this.links)
+  }
+
+  getRoutes() {
+    Object.values(ERoutes)
+    .map(value => this.links.push({
+      name: value,
+      routerLink: `/${value}`
+    }))
+  }
 }

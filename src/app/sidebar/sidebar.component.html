@@ -1,1 +1,7 @@
-<p>sidebar works!</p>
+<ul class="nav nav-pills flex-column">
+    <li class="nav-item" *ngFor="let link of links">
+        <a class="nav-link" routerLink={{link.routerLink}}>
+            <span class="nav-text">{{link.name}}</span>
+        </a>
+    </li>
+</ul>

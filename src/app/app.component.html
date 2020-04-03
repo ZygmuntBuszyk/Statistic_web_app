@@ -2,8 +2,9 @@
 
 <div class="container-fluid">
     <div id="main" class="row">
-        <app-sidebar></app-sidebar> 
-        <!-- class="col-3" -->
-        <app-dashboard class="col-9"></app-dashboard>
+        <app-sidebar id="sideBar" class="col-3 d-none d-sm-block sidebar"></app-sidebar> 
+        <div id="dashboard" class="col-9 ml-sm-auto pt-3">
+            <router-outlet></router-outlet>
+        </div>
     </div>
-</div>
+</div> 
