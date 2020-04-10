@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-skills',
@@ -7,18 +8,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SkillsComponent implements OnInit {
 
-  constructor() { }
+  constructor(public activeRouter: ActivatedRoute) { }
 
   ngOnInit(): void {
+    console.log(this.activeRouter.children)
   }
 
   test = [
-    {'1': 1},
-    {'1': 1},
-    {'1': 1},
-    {'1': 1},
-    {'1': 1},
-    {'1': 1},
-    {'1': 1},
+    { id: 1},
+    { id: 2},
+    { id: 3},
+    { id: 4},
+    { id: 5},
+    { id: 6},
+    { id: 7},
   ]
 }

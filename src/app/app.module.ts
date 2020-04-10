@@ -14,6 +14,7 @@ import { PieChartComponent } from './charts/pie-chart/pie-chart.component';
 import { LineChartComponent } from './charts/line-chart/line-chart.component';
 import { BarChartComponent } from './charts/bar-chart/bar-chart.component';
 import { SkillCardComponent } from './modules/skills/_common/_components/skill-card/skill-card.component';
+import { ChoosenSkillComponent } from './modules/skills/_common/_components/choosen-skill/choosen-skill.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { SkillCardComponent } from './modules/skills/_common/_components/skill-c
     PieChartComponent,
     LineChartComponent,
     BarChartComponent,
-    SkillCardComponent
+    SkillCardComponent,
+    ChoosenSkillComponent
   ],
   imports: [
     BrowserModule,

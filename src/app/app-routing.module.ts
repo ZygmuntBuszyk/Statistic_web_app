@@ -5,6 +5,7 @@ import { GoalsComponent } from './modules/goals/goals.component';
 import { ProfileComponent } from './modules/profile/profile.component';
 import { SkillsComponent } from './modules/skills/skills.component';
 import { StatisticsComponent } from './modules/statistics/statistics.component';
+import { ChoosenSkillComponent } from './modules/skills/_common/_components/choosen-skill/choosen-skill.component';
 
 
 const routes: Routes = [
@@ -22,7 +23,13 @@ const routes: Routes = [
   },
   {
       path: 'skills',
-      component: SkillsComponent
+      component: SkillsComponent,
+      children: [
+        {
+          path: ':id',
+          component: ChoosenSkillComponent
+        }
+      ]
   },
   {
       path: 'statistics',

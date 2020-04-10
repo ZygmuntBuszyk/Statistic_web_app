@@ -1,5 +1,11 @@
-<div class="section-container">
+<ng-container *ngIf="activeRouter.children.length === 0 else choosen">
   <div class="cards">
-    <app-skill-card *ngFor="let t of test" class="card"></app-skill-card>
+    <app-skill-card *ngFor="let skill of test" [skill]="skill" class="card"></app-skill-card>
   </div>
-</div>
+  <button type="button" class="btn btn-info btn-circle btn-xl">
+    <i class="fa fa-plus"></i>
+  </button>
+</ng-container>
+<ng-template #choosen>
+  <router-outlet></router-outlet>
+</ng-template>
