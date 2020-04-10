@@ -1,0 +1,13 @@
+:host {
+    .card {
+        height: calc(100vh - 140px);
+        
+        .back {
+            position: absolute;
+            top: 2%;
+            left: 2%;
+            font-size: 30px;
+        }
+    }
+    
+}

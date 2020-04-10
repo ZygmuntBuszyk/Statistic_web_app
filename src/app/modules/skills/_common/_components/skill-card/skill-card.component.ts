@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-skill-card',
@@ -6,10 +7,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./skill-card.component.scss']
 })
 export class SkillCardComponent implements OnInit {
-
-  constructor() { }
+  @Input() skill;
+  
+  public routerLink: string;
+  constructor() {}
 
   ngOnInit(): void {
+    this.routerLink = `/skills/${this.skill.id}`;
   }
 
 }
