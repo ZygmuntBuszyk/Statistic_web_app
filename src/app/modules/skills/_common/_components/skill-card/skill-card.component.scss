@@ -1,0 +1,10 @@
+.card-inner {
+    border: 2px solid transparent;
+    transition: ease-in-out 250ms;
+    cursor: pointer;
+}
+
+.card-inner:hover {
+    border-color: #00FFFF;
+    background: #00ffff17;
+}

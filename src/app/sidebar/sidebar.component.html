@@ -1,6 +1,6 @@
 <ul class="nav nav-pills flex-column">
     <li class="nav-item" *ngFor="let link of links">
-        <a class="nav-link" routerLink={{link.routerLink}}>
+        <a class="nav-link" routerLink={{link.routerLink}} routerLinkActive="module-active">
             <span class="nav-text">{{link.name}}</span>
         </a>
     </li>

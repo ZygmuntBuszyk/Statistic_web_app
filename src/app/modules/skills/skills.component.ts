@@ -12,4 +12,13 @@ export class SkillsComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  test = [
+    {'1': 1},
+    {'1': 1},
+    {'1': 1},
+    {'1': 1},
+    {'1': 1},
+    {'1': 1},
+    {'1': 1},
+  ]
 }
