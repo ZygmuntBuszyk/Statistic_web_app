@@ -1,13 +1,24 @@
-<ngx-smart-modal #confirmationModal
-                 identifier="confirmationModal"
-                 ariaLabel="Confirmation modal"
-                 [dismissable]="true">
-  <div class="modal-body">
+<ngx-smart-modal #addSkillModal
+                 identifier="addSkillModal"
+                 ariaLabel="Add skill modal"
+                 [dismissable]="false">
+  <!-- <div class="modal-body">
    <p>Are you sure you want to delete skill: {{skill.id}}</p>
   </div>
   <div class="modal-footer">
     <button type="button" class="btn btn-primary" (click)="deleteSkill()">Delete</button>
-    <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="confirmationModal.close()">Close
-    </button>
+  
+  </div> -->
+  <div class="modal-head">
+      <h3> Add Skill </h3>
   </div>
+  <div class="modal-body">
+  <form [formGroup]="addForm">
+        <mat-form-field>
+            <input matInput placeholder="Name" formControlName="name">
+        </mat-form-field>
+  </form>
+  </div>
+    <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="addSkillModal.close()">Close
+    </button>
 </ngx-smart-modal>

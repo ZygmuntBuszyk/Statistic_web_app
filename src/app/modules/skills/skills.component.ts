@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { DataTransferService } from './_common/_services/data-transfer.service';
+import { NgxSmartModalService } from 'ngx-smart-modal';
 
 @Component({
   selector: 'app-skills',
@@ -9,7 +10,7 @@ import { DataTransferService } from './_common/_services/data-transfer.service';
 })
 export class SkillsComponent implements OnInit {
 
-  constructor(public activeRouter: ActivatedRoute, private dataTransferService: DataTransferService) { }
+  constructor(public activeRouter: ActivatedRoute, private dataTransferService: DataTransferService, public ngxSmartModalService: NgxSmartModalService) { }
 
   ngOnInit(): void {
     this.dataTransferService.skillToDelete$.subscribe(
@@ -21,8 +22,10 @@ export class SkillsComponent implements OnInit {
     this.test = this.test.filter(
       item => item != skill
     )
-    console.log(this.test)
-    
+  }
+
+  addSkill() {
+    this.ngxSmartModalService.getModal('addSkillModal').open();
   }
 
   test = [

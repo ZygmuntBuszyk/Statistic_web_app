@@ -14,8 +14,14 @@ export class AddSkillModalComponent implements OnInit {
 
   ngOnInit(): void {
     this.addForm = this.fb.group({
-      
-    })
+      name: ''
+    });
+
+    this.addForm.valueChanges.subscribe(
+      values => {
+        console.log(values)
+      }
+    )
   }
 
 }

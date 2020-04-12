@@ -19,6 +19,16 @@ import { ConfirmationModalComponent } from './modules/skills/_common/_components
 import { NgxSmartModalModule } from 'ngx-smart-modal';
 import { AddSkillModalComponent } from './modules/skills/_common/_components/add-skill-modal/add-skill-modal.component';
 
+import { ReactiveFormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+import { MatInputModule } from '@angular/material/input';
+import { MatSelectModule } from '@angular/material/select';
+import { MatButtonModule } from '@angular/material/button';
+import { MatChipsModule } from '@angular/material/chips';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatFormFieldModule } from '@angular/material/form-field';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -41,7 +51,16 @@ import { AddSkillModalComponent } from './modules/skills/_common/_components/add
     BrowserModule,
     AppRoutingModule,
     ChartsModule,
-    NgxSmartModalModule.forRoot()
+    NgxSmartModalModule.forRoot(),
+    ReactiveFormsModule,
+    BrowserAnimationsModule,
+    MatInputModule,
+    MatSelectModule, 
+    MatButtonModule,
+    MatChipsModule,
+    MatCheckboxModule,
+    MatFormFieldModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]
