@@ -15,6 +15,9 @@ import { LineChartComponent } from './charts/line-chart/line-chart.component';
 import { BarChartComponent } from './charts/bar-chart/bar-chart.component';
 import { SkillCardComponent } from './modules/skills/_common/_components/skill-card/skill-card.component';
 import { ChoosenSkillComponent } from './modules/skills/_common/_components/choosen-skill/choosen-skill.component';
+import { ConfirmationModalComponent } from './modules/skills/_common/_components/confirmation-modal/confirmation-modal.component';
+import { NgxSmartModalModule } from 'ngx-smart-modal';
+import { AddSkillModalComponent } from './modules/skills/_common/_components/add-skill-modal/add-skill-modal.component';
 
 @NgModule({
   declarations: [
@@ -30,12 +33,15 @@ import { ChoosenSkillComponent } from './modules/skills/_common/_components/choo
     LineChartComponent,
     BarChartComponent,
     SkillCardComponent,
-    ChoosenSkillComponent
+    ChoosenSkillComponent,
+    ConfirmationModalComponent,
+    AddSkillModalComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ChartsModule
+    ChartsModule,
+    NgxSmartModalModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]

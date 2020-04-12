@@ -1,6 +1,7 @@
 :host {
     .card {
         height: calc(100vh - 140px);
+        color: black;
         
         .back {
             position: absolute;
@@ -8,6 +9,14 @@
             left: 2%;
             font-size: 30px;
         }
+
+        .delete {
+            position: absolute;
+            top: 2%;
+            right: 2%;
+            font-size: 30px;
+            color: tomato;
+            cursor: pointer;
+        }
     }
-    
 }

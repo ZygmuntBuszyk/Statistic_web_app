@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { DataTransferService } from './_common/_services/data-transfer.service';
 
 @Component({
   selector: 'app-skills',
@@ -8,10 +9,20 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class SkillsComponent implements OnInit {
 
-  constructor(public activeRouter: ActivatedRoute) { }
+  constructor(public activeRouter: ActivatedRoute, private dataTransferService: DataTransferService) { }
 
   ngOnInit(): void {
-    console.log(this.activeRouter.children)
+    this.dataTransferService.skillToDelete$.subscribe(
+      skill => this.deleteSkill(skill)
+    )
+  }
+
+  deleteSkill(skill) {
+    this.test = this.test.filter(
+      item => item != skill
+    )
+    console.log(this.test)
+    
   }
 
   test = [
