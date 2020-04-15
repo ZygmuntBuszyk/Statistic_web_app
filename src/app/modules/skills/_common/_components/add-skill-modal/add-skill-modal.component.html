@@ -2,23 +2,43 @@
                  identifier="addSkillModal"
                  ariaLabel="Add skill modal"
                  [dismissable]="false">
-  <!-- <div class="modal-body">
-   <p>Are you sure you want to delete skill: {{skill.id}}</p>
-  </div>
-  <div class="modal-footer">
-    <button type="button" class="btn btn-primary" (click)="deleteSkill()">Delete</button>
-  
-  </div> -->
   <div class="modal-head">
-      <h3> Add Skill </h3>
+      <h1> Add Skill </h1>
   </div>
-  <div class="modal-body">
-  <form [formGroup]="addForm">
+  
+  <form [formGroup]="addForm" (ngSubmit)="submitHandler()">
+      <!--  [hidden]="success" -->
+    <div class="modal-body">
         <mat-form-field>
             <input matInput placeholder="Name" formControlName="name">
+            <mat-error>
+                Name value is invalid
+            </mat-error>
         </mat-form-field>
+        <div formArrayName="formParameters">
+            <div *ngFor="let parameter of getParameters.controls; let parameterIndex=index" [formGroupName]="parameterIndex">
+                <mat-form-field>
+                    <input matInput placeholder="Parameter" formControlName="name">
+                    <mat-error>
+                        Parameter value is invalid
+                    </mat-error>
+                </mat-form-field>
+                <button mat-raised-button color="warn" (click)="deleteParameter(parameterIndex)">Delete Parameter</button>
+            </div>
+            <button mat-raised-button color="primary" class="button-add-skill" type="button" (click)="addParameter()">Add Parameter</button>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button mat-raised-button type="submit" [disabled]="addForm.invalid" color="primary">
+            Add  
+        </button>
+
+        <button mat-raised-button type="button" class="btn btn-secondary button-delete-skill" data-dismiss="modal" (click)="addSkillModal.close()">Close
+        </button>
+    </div>
+      
   </form>
-  </div>
-    <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="addSkillModal.close()">Close
-    </button>
+ 
+ 
+  
 </ngx-smart-modal>
